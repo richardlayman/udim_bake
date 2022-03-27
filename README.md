@@ -16,7 +16,7 @@ The plugin has been tested for both multires and source/target objects using nor
 
 Installation
 ---------------
-Copy the udim_bake.py into the blender/scripts/addons/ folder. In Blender, go to the Prefenceses and enable the UDIM Bake addon. A 'Bake UDIM Tiles' button will appear in the Bake section of the Render Properties panel. This button will only be used for UDIM texture nodes; all other images will use the normal 'Bake' button.
+Copy the udim_bake.py into the blender/scripts/addons/ folder. In Blender, go to the Preferences and enable the UDIM Bake addon. A 'Bake UDIM Tiles' button will appear in the Bake section of the Render Properties panel. This button will only be used for UDIM texture nodes; all other images will use the normal 'Bake' button.
 ![UI](https://raw.githubusercontent.com/richardlayman/udim_bake/master/img/udim_bake_ui.png)
 
 
