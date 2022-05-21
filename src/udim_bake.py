@@ -112,7 +112,7 @@ def udim_bake(self, context):
         if context.scene.render.use_bake_multires:
             bpy.ops.object.bake_image(type=context.scene.cycles.bake_type)
         else:
-            bpy.ops.object.bake(type=context.scene.cycles.bake_type)
+            bpy.ops.object.bake(type=context.scene.cycles.bake_type, cage_extrusion=context.scene.render.bake.cage_extrusion, max_ray_distance=context.scene.render.bake.max_ray_distance)
 
         # move UVs back
         move_uvs(uvmap,x,y)
