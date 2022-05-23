@@ -22,8 +22,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 bl_info = {
     "name": "UDIM Bake",
     "author": "Richard Layman",
-    "version": (1, 1),
-    "blender": (3, 1, 0),
+    "version": (1, 2),
+    "blender": (3, 1, 2),
     "location": "Render Properties > Bake > UDIM Bake",
     "description": "Bakes UDMI texture tiles",
     "warning": "",
@@ -110,7 +110,7 @@ def udim_bake(self, context):
 
         # bake
         if context.scene.render.use_bake_multires:
-            bpy.ops.object.bake_image(type=context.scene.cycles.bake_type)
+            bpy.ops.object.bake_image()
         else:
             bpy.ops.object.bake(type=context.scene.cycles.bake_type, use_cage=context.scene.render.bake.use_cage, cage_extrusion=context.scene.render.bake.cage_extrusion, max_ray_distance=context.scene.render.bake.max_ray_distance)
 
