@@ -58,14 +58,15 @@ def udim_bake(self, context):
     nodes = mat.node_tree.nodes
     udimnode = None
     udim = None # this will get set to the Image
+    is_data = True # this is set by the source image. True for normal maps  
 
     # verify the selected node is a UDIM
     for node in nodes:
         if node.type == 'TEX_IMAGE' and node.select == True:
             if node.image.source == 'TILED':
-                #print("SOURCE IMAGE DEPTH=",node.image.depth," CHANNELS=",node.image.channels," IS FLOAT=",node.image.is_float," USE FLOAT=",node.image.use_generated_float," COLORSPACE_SETTINGS: none-color data=",node.image.colorspace_settings.is_data)
                 udimnode = node
                 udim = node.image
+                is_data = node.image.colorspace_settings.is_data
 
     # Error checking, fail if udim is None
     if udim is None:
@@ -87,8 +88,7 @@ def udim_bake(self, context):
     uvnode.uv_map = uvmap.name
     texnode = nodes.new('ShaderNodeTexImage')
     image = bpy.data.images.load(get_filepath(udim,tiles[0]))
-    image.colorspace_settings.is_data = True
-    #print("NEW IMAGE DEPTH=",image.depth," CHANNELS=",image.channels," IS FLOAT=",image.is_float," USE FLOAT=",image.use_generated_float," COLORSPACE_SETTINGS: none-color data=",image.colorspace_settings.is_data)
+    image.colorspace_settings.is_data = is_data
     texnode.image = image
     # need to make the texnode active so it's the one that is baked to
     texnode.select = True
@@ -106,8 +106,7 @@ def udim_bake(self, context):
         
         image.filepath = imagepath
         image.reload()
-        image.colorspace_settings.is_data = True
-        #print("RENDERED IMAGE DEPTH=",image.depth," CHANNELS=",image.channels," IS FLOAT=",image.is_float," USE FLOAT=",image.use_generated_float," COLORSPACE_SETTINGS: none-color data=",image.colorspace_settings.is_data)
+        image.colorspace_settings.is_data = is_data
  
         # move UVs
         x,y = get_tile_offset(tile)

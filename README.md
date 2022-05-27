@@ -12,7 +12,7 @@ Currenly Blender is not able to bake UDIM tiles, only the first tile will bake. 
 
 Current Status
 ---------------
-Tested for Blender v3.1.2. May not work on earlier versions due to changes made in the bake calls. The plugin has been tested for both multires and source/target objects using normals maps. It should work on all over types but has not been tested fully. Any problems that you encounter should be reported so it can be fixed.
+Tested for Blender v3.1.2. May not work on earlier versions due to changes made in the bake calls. The plugin has been tested for both multires and source/target objects using normals maps. It should work on all other types but has not been tested fully. Any problems that you encounter should be reported so it can be fixed.
 
 Installation
 ---------------
