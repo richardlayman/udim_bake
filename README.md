@@ -1,6 +1,10 @@
 UDIM Bake
 =======
 
+UPDATE
+---------------
+BLENDER v3.2 IS SUPPOSED TO FIX THE UDIM BAKE ISSUE SO THIS SCRIPT WILL NOT BE NEEDED FOR THAT VERSION AND ABOVE.
+
 ![3D View](https://raw.githubusercontent.com/richardlayman/udim_bake/master/img/udim_multires_baked_object.png)
 ![UDIM Tiles](https://raw.githubusercontent.com/richardlayman/udim_bake/master/img/udim_multires_baked_tiles.png)
 
